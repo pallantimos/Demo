@@ -1,0 +1,36 @@
+﻿<Window x:Class="Demo2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo2"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+        Title="MainWindow" Height="250" Width="300">
+    <Border CornerRadius="15" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+
+            <Image x:Name="captchaImage" Width="150" Height="50"  Grid.Row="1" VerticalAlignment="Top"/>
+
+            <TextBlock Grid.Row="0" VerticalAlignment="Center" Grid.Column="1"  Text="Подтвердите что вы не робот" 
+                       Foreground="#7d6b5a" TextAlignment="Center" FontSize="14" FontFamily="Bahnschrift Light" 
+                        
+                       />
+            <TextBox x:Name="textboxCaptcha" Grid.Row="1" Grid.Column="1" 
+                     BorderBrush="#ebe7e3" Height="37" Width="200"
+                     VerticalAlignment="Bottom"
+                     VerticalContentAlignment="Center"
+                     FontFamily="Bahnschrift Light"
+                     ></TextBox>
+
+            <Button Margin="10 0 0 0" HorizontalAlignment="Left" Grid.Row="2" Height="32" Width="130" Background="#ebe7e3" Foreground="#7d6b5a" Content="Обновить" BorderBrush="White" Click="Refresh"/>
+            <Button Margin="0 0 10 0" HorizontalAlignment="Right" Grid.Row="2" Height="32" Width="130" Background="#ebe7e3" Foreground="#7d6b5a" Content="Отправить" BorderBrush="White" Click="IsRobot"/>
+        </Grid>
+    </Border>
+</Window>
