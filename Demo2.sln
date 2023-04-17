@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo2", "Demo2\Demo2.csproj", "{0C24D7A9-BC0C-4213-B0D5-E226FD1E2A62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{A9F48AF5-5FC3-4F54-B6D5-26C6F1CD4A5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptchaModel", "CaptchaModel\CaptchaModel.csproj", "{8A270429-3E88-40D5-B40C-7056073D3115}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C24D7A9-BC0C-4213-B0D5-E226FD1E2A62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C24D7A9-BC0C-4213-B0D5-E226FD1E2A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C24D7A9-BC0C-4213-B0D5-E226FD1E2A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C24D7A9-BC0C-4213-B0D5-E226FD1E2A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A270429-3E88-40D5-B40C-7056073D3115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A270429-3E88-40D5-B40C-7056073D3115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A270429-3E88-40D5-B40C-7056073D3115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A270429-3E88-40D5-B40C-7056073D3115}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A270429-3E88-40D5-B40C-7056073D3115} = {A9F48AF5-5FC3-4F54-B6D5-26C6F1CD4A5A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D854746E-0E21-4BBC-97ED-43FD2F17AB18}
+	EndGlobalSection
+EndGlobal
