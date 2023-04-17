@@ -1,0 +1,14 @@
+G:\demo\Demo2\CaptchaModel\bin\Debug\CaptchaModel.dll
+G:\demo\Demo2\CaptchaModel\bin\Debug\CaptchaModel.pdb
+G:\demo\Demo2\CaptchaModel\obj\Debug\CaptchaModel.csproj.AssemblyReference.cache
+G:\demo\Demo2\CaptchaModel\obj\Debug\CaptchaModel.csproj.CoreCompileInputs.cache
+G:\demo\Demo2\CaptchaModel\obj\Debug\CaptchaModel.dll
+G:\demo\Demo2\CaptchaModel\obj\Debug\CaptchaModel.pdb
+G:\Demo2\CaptchaModel\bin\Debug\CaptchaModel.dll
+G:\Demo2\CaptchaModel\bin\Debug\CaptchaModel.pdb
+G:\Demo2\CaptchaModel\bin\Debug\System.Linq.dll
+G:\Demo2\CaptchaModel\obj\Debug\CaptchaModel.csproj.AssemblyReference.cache
+G:\Demo2\CaptchaModel\obj\Debug\CaptchaModel.csproj.CoreCompileInputs.cache
+G:\Demo2\CaptchaModel\obj\Debug\CaptchaModel.csproj.CopyComplete
+G:\Demo2\CaptchaModel\obj\Debug\CaptchaModel.dll
+G:\Demo2\CaptchaModel\obj\Debug\CaptchaModel.pdb
