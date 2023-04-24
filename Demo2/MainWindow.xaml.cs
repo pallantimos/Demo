@@ -27,15 +27,18 @@ namespace Demo2
         {
             InitializeComponent();
 
-            captcha = new Captcha();
-            // генерируем и отображаем капчу
-            captchaText = captcha.getImage();
-            byte[] bytes = Convert.FromBase64String(captchaText);
-            BitmapImage bitmapImage = new BitmapImage();
-            bitmapImage.BeginInit();
-            bitmapImage.StreamSource = new MemoryStream(bytes);
-            bitmapImage.EndInit();
-            captchaImage.Source = bitmapImage;
+            Login registration = new Login();
+            registration.Show();
+            this.Close();
+            //captcha = new Captcha();
+            //// генерируем и отображаем капчу
+            //captchaText = captcha.getImage();
+            //byte[] bytes = Convert.FromBase64String(captchaText);
+            //BitmapImage bitmapImage = new BitmapImage();
+            //bitmapImage.BeginInit();
+            //bitmapImage.StreamSource = new MemoryStream(bytes);
+            //bitmapImage.EndInit();
+            //captchaImage.Source = bitmapImage;
         }
 
         private void IsRobot(object sender, RoutedEventArgs e)

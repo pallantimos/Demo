@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
@@ -35,32 +36,25 @@ namespace Demo2.Windows
 
         private void Enter(object sender, RoutedEventArgs e)
         {
-            string connString = @"Data Source = DBSRV\mam2022; Initial Catalog = DEMO4 Integrated Security = True;";
+            string connString = @"Data Source = DBSRV\mam2022; Initial Catalog = DEMO4; Integrated Security = True;";
             SqlConnection sqlConnection = new SqlConnection(connString);
             sqlConnection.Open();
 
-            SqlCommand sqlCommand = new SqlCommand("SELECT * from Жюри Where почта ='" + textboxlogin.Text + "' AND Пароль = '" + textboxpass.Text + "'", sqlConnection);
-            SqlDataReader sqlDataReader3 = sqlCommand.ExecuteReader();
+            string hashpass = CaptchaModel.Captcha.GetHashString(textboxpass.Text);
+            string command = "Select * from Жюри Where ФИО = @login AND пароль = @pass";
+            SqlCommand cmd = new SqlCommand(command, sqlConnection);
+            cmd.Parameters.Add("@login", SqlDbType.VarChar, 255).Value = textboxlogin.Text;
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar, 255).Value = hashpass;
+            //SqlCommand sqlCommand = new SqlCommand("SELECT * from Жюри Where почта ='" + textboxlogin.Text + "' AND Пароль = '" + hashpass + "'", sqlConnection);
+            SqlDataReader sqlDataReader = cmd.ExecuteReader();
 
-            if (sqlDataReader3.Read())
+            if (sqlDataReader.Read())
             {
                 Jury jury = new Jury();
                 jury.Show();
                 this.Close();
             }
-            sqlDataReader3.Close();
-
-            //SqlCommand sqlCommand2 = new SqlCommand("SELECT * from Сотрудники Where Логин ='" + textboxlogin.Text + "' AND Пароль = '" + textboxpass.Password + "'", sqlConnection);
-            //sqlDataReader3 = sqlCommand2.ExecuteReader();
-
-            //if (sqlDataReader3.Read())
-            //{
-            //    Librarian librarian = new Librarian();
-            //    librarian.Show();
-            //    this.Close();
-            //}
-
-            //sqlDataReader3.Close();
+            sqlDataReader.Close();
             sqlConnection.Close();
         }
 

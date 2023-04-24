@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -38,10 +39,20 @@ namespace Demo2.Windows
             SqlConnection sqlConnection = new SqlConnection(connString);
             sqlConnection.Open();
 
-            SqlCommand sqlCommand = new SqlCommand("INSERT INTO Жюри VALUES('" + textboxlogin.Text + "', '" + textboxsex.Text + "', '"
-                        + textboxemail.Text + "', '" + textboxbirth.Text + "', " + textboxcountry.Text + ", '" +
-                         textboxnumber.Text + "', '" + comboboxway.SelectedValue.ToString() + "', '" + textboxpass.Text + "' + '1')", sqlConnection);
-            SqlDataReader sqlDataReader3 = sqlCommand.ExecuteReader();
+            string hashpass = CaptchaModel.Captcha.GetHashString(textboxpass.Text);
+            string command = "insert into Жюри values (@login, 'мужской',@email, @data, 82, @phone, @direction, @pass, 12)";
+            SqlCommand cmd = new SqlCommand(command, sqlConnection);
+            cmd.Parameters.Add("@login", SqlDbType.VarChar, 255).Value = textboxlogin.Text;
+            cmd.Parameters.Add("@data", SqlDbType.VarChar, 255).Value = textboxbirth.Text;
+            cmd.Parameters.Add("@email", SqlDbType.VarChar, 255).Value = textboxemail.Text;
+            cmd.Parameters.Add("@phone", SqlDbType.VarChar, 255).Value = textboxnumber.Text;
+            cmd.Parameters.Add("@direction", SqlDbType.VarChar, 255).Value = comboboxway.SelectedValue.ToString();
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar, 255).Value = hashpass;
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+            //SqlCommand sqlCommand = new SqlCommand("INSERT INTO Жюри VALUES('" + textboxlogin.Text + "', '" + textboxsex.Text + "', '"
+            //            + textboxemail.Text + "', '" + textboxbirth.Text + "', " + textboxcountry.Text + ", '" +
+            //             textboxnumber.Text + "', '" + comboboxway.SelectedValue.ToString() + "', '" + hashpass + "' + '1')", sqlConnection);
         }
     }
 }

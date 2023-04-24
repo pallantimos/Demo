@@ -1,0 +1,10 @@
+G:\Demo 2 git\Helper\bin\Debug\netcoreapp3.1\Helper.deps.json
+G:\Demo 2 git\Helper\bin\Debug\netcoreapp3.1\Helper.dll
+G:\Demo 2 git\Helper\bin\Debug\netcoreapp3.1\Helper.pdb
+G:\Demo 2 git\Helper\obj\Debug\netcoreapp3.1\Helper.csproj.AssemblyReference.cache
+G:\Demo 2 git\Helper\obj\Debug\netcoreapp3.1\Helper.GeneratedMSBuildEditorConfig.editorconfig
+G:\Demo 2 git\Helper\obj\Debug\netcoreapp3.1\Helper.AssemblyInfoInputs.cache
+G:\Demo 2 git\Helper\obj\Debug\netcoreapp3.1\Helper.AssemblyInfo.cs
+G:\Demo 2 git\Helper\obj\Debug\netcoreapp3.1\Helper.csproj.CoreCompileInputs.cache
+G:\Demo 2 git\Helper\obj\Debug\netcoreapp3.1\Helper.dll
+G:\Demo 2 git\Helper\obj\Debug\netcoreapp3.1\Helper.pdb
