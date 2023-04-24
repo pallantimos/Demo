@@ -39,13 +39,13 @@ namespace Demo2.Windows
             SqlConnection sqlConnection = new SqlConnection(connString);
             sqlConnection.Open();
 
-            SqlCommand sqlCommand = new SqlCommand("SELECT * from Автор Where Имя_автора ='" + textboxlogin.Text + "' AND Пароль = '" + textboxpass.Text + "'", sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("SELECT * from Жюри Where почта ='" + textboxlogin.Text + "' AND Пароль = '" + textboxpass.Text + "'", sqlConnection);
             SqlDataReader sqlDataReader3 = sqlCommand.ExecuteReader();
 
             if (sqlDataReader3.Read())
             {
-                Moderator reader = new Moderator();
-                reader.Show();
+                Jury jury = new Jury();
+                jury.Show();
                 this.Close();
             }
             sqlDataReader3.Close();

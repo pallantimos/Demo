@@ -12,3 +12,11 @@ G:\Demo2\CaptchaModel\obj\Debug\CaptchaModel.csproj.CoreCompileInputs.cache
 G:\Demo2\CaptchaModel\obj\Debug\CaptchaModel.csproj.CopyComplete
 G:\Demo2\CaptchaModel\obj\Debug\CaptchaModel.dll
 G:\Demo2\CaptchaModel\obj\Debug\CaptchaModel.pdb
+G:\Demo 2 git\CaptchaModel\bin\Debug\CaptchaModel.dll
+G:\Demo 2 git\CaptchaModel\bin\Debug\CaptchaModel.pdb
+G:\Demo 2 git\CaptchaModel\bin\Debug\System.Linq.dll
+G:\Demo 2 git\CaptchaModel\obj\Debug\CaptchaModel.csproj.AssemblyReference.cache
+G:\Demo 2 git\CaptchaModel\obj\Debug\CaptchaModel.csproj.CoreCompileInputs.cache
+G:\Demo 2 git\CaptchaModel\obj\Debug\CaptchaModel.csproj.CopyComplete
+G:\Demo 2 git\CaptchaModel\obj\Debug\CaptchaModel.dll
+G:\Demo 2 git\CaptchaModel\obj\Debug\CaptchaModel.pdb

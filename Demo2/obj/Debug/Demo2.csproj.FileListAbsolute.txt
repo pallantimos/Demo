@@ -48,3 +48,30 @@ G:\Demo2\Demo2\obj\Debug\Demo2.csproj.CoreCompileInputs.cache
 G:\Demo2\Demo2\obj\Debug\Demo2.csproj.CopyComplete
 G:\Demo2\Demo2\obj\Debug\Demo2.exe
 G:\Demo2\Demo2\obj\Debug\Demo2.pdb
+G:\Demo 2 git\Demo2\bin\Debug\Demo2.exe.config
+G:\Demo 2 git\Demo2\bin\Debug\Demo2.exe
+G:\Demo 2 git\Demo2\bin\Debug\Demo2.pdb
+G:\Demo 2 git\Demo2\bin\Debug\CaptchaModel.dll
+G:\Demo 2 git\Demo2\bin\Debug\System.Linq.dll
+G:\Demo 2 git\Demo2\bin\Debug\CaptchaModel.pdb
+G:\Demo 2 git\Demo2\obj\Debug\Demo2.csproj.AssemblyReference.cache
+G:\Demo 2 git\Demo2\obj\Debug\MainWindow.g.cs
+G:\Demo 2 git\Demo2\obj\Debug\Windows\Jury.g.cs
+G:\Demo 2 git\Demo2\obj\Debug\Windows\Login.g.cs
+G:\Demo 2 git\Demo2\obj\Debug\Windows\Moderator.g.cs
+G:\Demo 2 git\Demo2\obj\Debug\Windows\Registration.g.cs
+G:\Demo 2 git\Demo2\obj\Debug\App.g.cs
+G:\Demo 2 git\Demo2\obj\Debug\Demo2_MarkupCompile.cache
+G:\Demo 2 git\Demo2\obj\Debug\Demo2_MarkupCompile.lref
+G:\Demo 2 git\Demo2\obj\Debug\MainWindow.baml
+G:\Demo 2 git\Demo2\obj\Debug\Windows\Jury.baml
+G:\Demo 2 git\Demo2\obj\Debug\Windows\Login.baml
+G:\Demo 2 git\Demo2\obj\Debug\Windows\Moderator.baml
+G:\Demo 2 git\Demo2\obj\Debug\Windows\Registration.baml
+G:\Demo 2 git\Demo2\obj\Debug\Demo2.g.resources
+G:\Demo 2 git\Demo2\obj\Debug\Demo2.Properties.Resources.resources
+G:\Demo 2 git\Demo2\obj\Debug\Demo2.csproj.GenerateResource.cache
+G:\Demo 2 git\Demo2\obj\Debug\Demo2.csproj.CoreCompileInputs.cache
+G:\Demo 2 git\Demo2\obj\Debug\Demo2.csproj.CopyComplete
+G:\Demo 2 git\Demo2\obj\Debug\Demo2.exe
+G:\Demo 2 git\Demo2\obj\Debug\Demo2.pdb
