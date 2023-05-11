@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo2.Windows"
         mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
         Title="Moderator" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Border Background="White" CornerRadius="30">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" VerticalAlignment="Center"  Text="Модератор"
+                       Foreground="#7d6b5a" TextAlignment="Center" FontSize="26" FontFamily="Bahnschrift Light" />
+            <Border BorderThickness="2" BorderBrush="#7d6b5a"/>
+        </Grid>
+    </Border>
 </Window>

@@ -14,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Configuration;
+using System.Collections.Specialized;
 
 namespace Demo2.Windows
 {
@@ -36,7 +38,7 @@ namespace Demo2.Windows
 
         private void Enter(object sender, RoutedEventArgs e)
         {
-            string connString = @"Data Source = DBSRV\mam2022; Initial Catalog = DEMO4; Integrated Security = True;";
+            string connString = @ConfigurationManager.AppSettings.Get("connString");
             SqlConnection sqlConnection = new SqlConnection(connString);
             sqlConnection.Open();
 

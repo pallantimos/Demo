@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -35,14 +36,16 @@ namespace Demo2.Windows
 
         private void Registrate(object sender, RoutedEventArgs e)
         {
-            string connString = @"Data Source = DBSRV\mam2022; Initial Catalog = DEMO4; Integrated Security = True;";
+            string connString = @ConfigurationManager.AppSettings.Get("connString"); ;
             SqlConnection sqlConnection = new SqlConnection(connString);
             sqlConnection.Open();
 
             string hashpass = CaptchaModel.Captcha.GetHashString(textboxpass.Text);
-            string command = "insert into Жюри values (@login, 'мужской',@email, @data, 82, @phone, @direction, @pass, 12)";
+            string command = "insert into Жюри values (@login, @sex , @email, @data, @country, @phone, @direction, @pass, 12)";
             SqlCommand cmd = new SqlCommand(command, sqlConnection);
             cmd.Parameters.Add("@login", SqlDbType.VarChar, 255).Value = textboxlogin.Text;
+            cmd.Parameters.Add("@sex", SqlDbType.VarChar, 255).Value = textboxsex.Text;
+            cmd.Parameters.Add("@country", SqlDbType.VarChar, 255).Value = textboxcountry.Text;
             cmd.Parameters.Add("@data", SqlDbType.VarChar, 255).Value = textboxbirth.Text;
             cmd.Parameters.Add("@email", SqlDbType.VarChar, 255).Value = textboxemail.Text;
             cmd.Parameters.Add("@phone", SqlDbType.VarChar, 255).Value = textboxnumber.Text;
