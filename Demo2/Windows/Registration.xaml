@@ -7,84 +7,175 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Background="Transparent"
-        Title="MainWindow" Height="700" Width="400">
+        Title="MainWindow" Height="700" Width="700">
     <Border CornerRadius="15" Background="White">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="90" />
-                <RowDefinition />
+                <RowDefinition/>
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="65"/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" VerticalAlignment="Center" Grid.Column="1"  Text="Регистрация" 
+            <TextBlock Grid.Row="0" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="4"   Text="Регистрация Модератора\Жюри" 
                        Foreground="#7d6b5a" TextAlignment="Center" FontSize="26" FontFamily="Bahnschrift Light"/>
-            
-
-            <TextBox x:Name="textboxlogin" Grid.Row="1" Grid.Column="1" 
-                     BorderBrush="#ebe7e3" Height="35" Width="200"
-                     VerticalAlignment="Top"
-                     VerticalContentAlignment="Center"
-                     FontFamily="Bahnschrift Light"
-                     Text="ФИО"
-                     />
-
-            <TextBox x:Name="textboxemail" Grid.Row="1" Grid.Column="1" 
-                     BorderBrush="#ebe7e3" Height="35" Width="200"
-                     VerticalAlignment="Bottom"
-                     VerticalContentAlignment="Center"
-                     FontFamily="Bahnschrift Light"
-                     Text="email"
-                     Margin="0 0 0 15"
-                     />
-
-            <TextBox x:Name="textboxpass" Grid.Row="2" Grid.Column="1" Height="35" Width="200"
-                         VerticalContentAlignment="Center"
-                         VerticalAlignment="Top"        
-                         Text="Пароль"
+            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Text="Id Number:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="2" x:Name="textboxnumber" Width="auto" VerticalContentAlignment="Center"
                         BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
-
-            <TextBox x:Name="textboxsex" Grid.Row="1" Grid.Column="1" Height="35" Width="200"
-                         VerticalContentAlignment="Center"
-                         VerticalAlignment="Center"    
-                         Text="Пол"
-                         Margin="0 0 0 20"
+                <TextBlock Grid.Row="2" Text="ФИО:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="2" x:Name="textboxfio" Width="auto" VerticalContentAlignment="Center"
                         BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
-
-            <TextBox x:Name="textboxbirth" Grid.Row="2" Grid.Column="1" Height="35" Width="200"
-                         VerticalContentAlignment="Center"
-                         VerticalAlignment="Center"    
-                         Text="Дата рождения"
-                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
-
-            <TextBox x:Name="textboxcountry" Grid.Row="2" Grid.Column="1" Height="35" Width="200"
-                         VerticalContentAlignment="Center"
-                         VerticalAlignment="Bottom"    
-                         Text="Страна"
-                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
-
-            <TextBox x:Name="textboxnumber" Grid.Row="3" Grid.Column="1" Height="35" Width="200"
-                        Margin="0 15 0 0"
-                         VerticalContentAlignment="Center"
-                         VerticalAlignment="Top"    
-                         Text="Телефон"
-                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
-
-            <StackPanel  Margin="0 20 0 0" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">
-                <ComboBox VerticalAlignment="Center"  x:Name="comboboxway" Width="200" >
-                    <TextBlock>Информационная безопасность</TextBlock>
-                    <TextBlock>Биг Дата</TextBlock>
-                    <TextBlock>ИТ</TextBlock>
-                    <TextBlock>Дизайн</TextBlock>
+                <TextBlock Grid.Row="4" Text="Пол:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" x:Name="comboboxsex"  >
+                    <ComboBoxItem>мужской</ComboBoxItem>
+                    <ComboBoxItem>женский</ComboBoxItem>
                 </ComboBox>
-            </StackPanel>
+            </Grid>
 
-            <Button Grid.Column="1" Grid.Row="4"  Background="#ebe7e3" 
-                    Height="34" Width="200" Content="Регистрация" VerticalAlignment="Top" BorderBrush="#ebe7e3" Click="Registrate" Foreground="#7d6b5a" FontFamily="Bahnschrift Light"/>
-            <Button Grid.Column="1" Grid.Row="4"  Background="#ebe7e3"  Margin="0 18 0 0"
-                    Click="Main"
-                    Height="34" Width="200" Content="На главную" BorderBrush="#ebe7e3" Foreground="#7d6b5a" VerticalAlignment="Center" FontFamily="Bahnschrift Light"/>
+            <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Text="Роль:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox VerticalAlignment="Center" Grid.Row="0" Grid.Column="2" x:Name="comboboxrole"  >
+                    <ComboBoxItem>Модератор</ComboBoxItem>
+                    <ComboBoxItem>Жюри</ComboBoxItem>
+                </ComboBox>
+                <TextBlock Grid.Row="2" Text="Email:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="2" x:Name="textboxemail" Width="auto" VerticalContentAlignment="Center"
+                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
+                <TextBlock Grid.Row="4" Text="Телефон:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="4" Grid.Column="2" x:Name="textboxphone" Width="auto" VerticalContentAlignment="Center"
+                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="3"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Text="Направление:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="2" x:Name="textboxway" Width="auto" VerticalContentAlignment="Center"
+                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
+                <StackPanel  Grid.Row="2" Grid.Column="2" Orientation="Horizontal" >
+                    <CheckBox x:Name="Check" Margin="0 1 0 0" Click="isChecked"/>
+                    <TextBlock  FontSize="11" Text="Прикрепить к мероприятию" Foreground="#7d6b5a" Margin="3 0 0 0" />
+                </StackPanel>
+                <TextBlock Grid.Row="4" Text="Мероприятие:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <ComboBox VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" x:Name="comboboxway"  >
+                    <ComboBoxItem>Первая встреча клуба «Leader stories»</ComboBoxItem>
+                    <ComboBoxItem>Первый IoT-Forum в Санкт-Петербурге</ComboBoxItem>
+                    <ComboBoxItem>План проекта: практические советы, типичные ошибки</ComboBoxItem>
+                    <ComboBoxItem>Планирование проекта: что делать после того, как выяснили цель</ComboBoxItem>
+                    <ComboBoxItem>Поисковая оптимизация (SEO)</ComboBoxItem>
+                    <ComboBoxItem>Пользовательские требования</ComboBoxItem>
+                    <ComboBoxItem>Практикум «Обогнать конкурентов: усиливаем продажи и создаем клиентский сервис»</ComboBoxItem>
+                    <ComboBoxItem>Практический воркшоп по созданию договоренностей в Scrum-команде</ComboBoxItem>
+                    <ComboBoxItem>Презентационная сессия «TTD: технологии для жизни 2017»</ComboBoxItem>
+                    <ComboBoxItem>Презентация курса «Методы, технологии, инструменты обучения персонала в технических, продуктовых и IT-компаниях</ComboBoxItem>
+                    <ComboBoxItem>Коммуникативные неудачи</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+
+            <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="3"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Text="Пароль:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="2" x:Name="textboxpass" Width="auto" VerticalContentAlignment="Center"
+                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
+                <TextBlock Grid.Row="2" Text="Повтор пароля:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="2" x:Name="textboxpass2" Width="auto" VerticalContentAlignment="Center"
+                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
+                <StackPanel  Grid.Row="4" Grid.Column="2" Orientation="Horizontal" >
+                    <CheckBox Margin="0 1 0 0"/>
+                    <TextBlock  FontSize="11" Text="Видимый пароль" Foreground="#7d6b5a" Margin="3 0 0 0" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="5" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="9"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="3"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Text="Дата рождения:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="2" x:Name="textboxbirth" Width="auto" VerticalContentAlignment="Center"
+                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
+                <TextBlock Grid.Row="2" Text="Страна:" Foreground="#7d6b5a" TextAlignment="Right" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="2" Grid.Column="2" x:Name="textboxcountry" Width="auto" VerticalContentAlignment="Center"
+                        BorderBrush="#ebe7e3" FontFamily="Bahnschrift Light"/>
+                <Grid Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button VerticalAlignment="Bottom" Grid.Column="0"  Background="#ebe7e3" 
+                    Height="24" Width="60" Content="Ок"  BorderBrush="#ebe7e3" Click="Registrate" Foreground="#7d6b5a" FontFamily="Bahnschrift Light"/>
+                    <Button VerticalAlignment="Bottom"  Background="#ebe7e3" 
+                    Click="Main" Grid.Column="1"
+                    Height="24" Width="70" Content="Отмена" BorderBrush="#ebe7e3" Foreground="#7d6b5a" FontFamily="Bahnschrift Light"/>
+                </Grid>
+            </Grid>
         </Grid>
     </Border>
 </Window>

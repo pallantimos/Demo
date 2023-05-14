@@ -43,7 +43,7 @@ namespace Demo2.Windows
             sqlConnection.Open();
 
             string hashpass = CaptchaModel.Captcha.GetHashString(textboxpass.Text);
-            string command = "Select * from Жюри Where ФИО = @login AND пароль = @pass";
+            string command = "Select * from Модераторы Where телефон = @login AND пароль = @pass";
             SqlCommand cmd = new SqlCommand(command, sqlConnection);
             cmd.Parameters.Add("@login", SqlDbType.VarChar, 255).Value = textboxlogin.Text;
             cmd.Parameters.Add("@pass", SqlDbType.VarChar, 255).Value = hashpass;
@@ -52,8 +52,8 @@ namespace Demo2.Windows
 
             if (sqlDataReader.Read())
             {
-                Jury jury = new Jury();
-                jury.Show();
+                Moderator moderator = new Moderator((int)sqlDataReader["id"], (string)sqlDataReader["пол"], (string)sqlDataReader["ФИО"], sqlConnection, sqlDataReader);
+                moderator.Show();
                 this.Close();
             }
             sqlDataReader.Close();

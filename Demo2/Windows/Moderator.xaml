@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Background="Transparent"
-        Title="Moderator" Height="450" Width="800">
+        Title="Moderator" Height="650" Width="800">
     <Border Background="White" CornerRadius="30">
         <Grid>
             <Grid.RowDefinitions>
@@ -16,17 +16,60 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
+                
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" VerticalAlignment="Center"  Text="Модератор"
+            <TextBlock Grid.Row="0" VerticalAlignment="Center"  Text="Окно модератора" Grid.Column="1" Grid.ColumnSpan="2"
                        Foreground="#7d6b5a" TextAlignment="Center" FontSize="26" FontFamily="Bahnschrift Light" />
-            <Border BorderThickness="2" BorderBrush="#7d6b5a"/>
+
+            <TextBlock Grid.Row="1" VerticalAlignment="Top"  Text="" Grid.Column="1" Grid.ColumnSpan="2" x:Name="time"
+                       Foreground="#7d6b5a" TextAlignment="Center" FontSize="20" FontFamily="Bahnschrift Light" />
+            <TextBlock Grid.Row="1" VerticalAlignment="Center"  Text="" Grid.Column="1" Grid.ColumnSpan="2" x:Name="name"
+                       Foreground="#7d6b5a" TextAlignment="Center" FontSize="20" FontFamily="Bahnschrift Light" />
+
+            <TextBlock Grid.Row="2" VerticalAlignment="Top"  Text="Направление"
+                       Foreground="#7d6b5a" TextAlignment="Center" FontSize="22" FontFamily="Bahnschrift Light" />
+
+            <Button Grid.Row="1" Grid.Column="4" Content="Мои активности" Height="40" Width="100" Foreground="#7d6b5a" />
+            
+            <Button Grid.Row="8" Grid.Column="4" Content="Подать заявку" Height="40" Width="100" Foreground="#7d6b5a" />
+
+            <DataGrid Name="DatagridActivities" ColumnHeaderStyle="{StaticResource CenteredHeaderStyle}" Grid.Row="3" Grid.ColumnSpan="4" Grid.RowSpan="4">
+                
+            </DataGrid>
+
+            <ComboBox Grid.Row="2" VerticalAlignment="top" Grid.Column="1" Height="30" Grid.ColumnSpan="2" Width="300" DataContextChanged="FilterbyWay">
+                <ComboBoxItem Content="Информационная безопасность"/>
+                <ComboBoxItem Content="Биг Дата"/>
+                <ComboBoxItem Content="ИТ"/>
+                <ComboBoxItem Content="Дизайн"/>
+            </ComboBox>
+
+            <ComboBox x:Name="comboboxway" Grid.Row="2" VerticalAlignment="Bottom" Grid.Column="1" Height="30" Grid.ColumnSpan="2" Width="300" SelectionChanged="FilterbyEvent">
+                <ComboBoxItem>Первая встреча клуба «Leader stories»</ComboBoxItem>
+                <ComboBoxItem>Первый IoT-Forum в Санкт-Петербурге</ComboBoxItem>
+                <ComboBoxItem>План проекта: практические советы, типичные ошибки</ComboBoxItem>
+                <ComboBoxItem>Планирование проекта: что делать после того, как выяснили цель</ComboBoxItem>
+                <ComboBoxItem>Поисковая оптимизация (SEO)</ComboBoxItem>
+                <ComboBoxItem>Пользовательские требования</ComboBoxItem>
+                <ComboBoxItem>Практикум «Обогнать конкурентов: усиливаем продажи и создаем клиентский сервис»</ComboBoxItem>
+                <ComboBoxItem>Практический воркшоп по созданию договоренностей в Scrum-команде</ComboBoxItem>
+                <ComboBoxItem>Презентационная сессия «TTD: технологии для жизни 2017»</ComboBoxItem>
+                <ComboBoxItem>Презентация курса «Методы, технологии, инструменты обучения персонала в технических, продуктовых и IT-компаниях</ComboBoxItem>
+                <ComboBoxItem>Коммуникативные неудачи</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Grid.Row="2" VerticalAlignment="bottom"  Text="Мероприятие"
+                       Foreground="#7d6b5a" TextAlignment="Center" FontSize="22" FontFamily="Bahnschrift Light" />
         </Grid>
     </Border>
 </Window>

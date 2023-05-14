@@ -30,7 +30,7 @@
                      VerticalAlignment="Top"
                      VerticalContentAlignment="Center"
                      FontFamily="Bahnschrift Light"
-                     Text="ФИО"
+                     Text="Телефон"
                      />
             <TextBox x:Name="textboxpass" Grid.Row="2" Grid.Column="1" Height="47" Width="200"
                          VerticalContentAlignment="Center"

@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Demo2"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="CenteredHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
+        
     </Application.Resources>
 </Application>

@@ -19,3 +19,9 @@ G:\Demo 2 git\CaptchaModel\obj\Debug\CaptchaModel.csproj.CoreCompileInputs.cache
 G:\Demo 2 git\CaptchaModel\obj\Debug\CaptchaModel.csproj.CopyComplete
 G:\Demo 2 git\CaptchaModel\obj\Debug\CaptchaModel.dll
 G:\Demo 2 git\CaptchaModel\obj\Debug\CaptchaModel.pdb
+G:\Новая папка (12)\CaptchaModel\bin\Debug\CaptchaModel.dll
+G:\Новая папка (12)\CaptchaModel\bin\Debug\CaptchaModel.pdb
+G:\Новая папка (12)\CaptchaModel\obj\Debug\CaptchaModel.csproj.AssemblyReference.cache
+G:\Новая папка (12)\CaptchaModel\obj\Debug\CaptchaModel.csproj.CoreCompileInputs.cache
+G:\Новая папка (12)\CaptchaModel\obj\Debug\CaptchaModel.dll
+G:\Новая папка (12)\CaptchaModel\obj\Debug\CaptchaModel.pdb
