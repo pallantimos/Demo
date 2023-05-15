@@ -23,5 +23,15 @@ namespace Demo2.Windows
         {
             InitializeComponent();
         }
+
+        private void FilterbyWay(object sender, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void FilterbyEvent(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -49,7 +49,8 @@ namespace Demo2.Windows
 
             }else
             {
-                command = "insert into Модераторы values (@id, @FIO, @sex , @email, @birth, @country, @phone, @way, @pass, @event)";
+                //command = "insert into Модераторы values (@id, @FIO, @sex , @email, @birth, @country, @phone, @way, @pass, @event)";
+                command = "insert into Модераторы values ( @FIO, @sex , @email, @birth, @country, @phone, @way, @event, @pass, @id)";
             }
 
             string hashpass = CaptchaModel.Captcha.GetHashString(textboxpass.Text);

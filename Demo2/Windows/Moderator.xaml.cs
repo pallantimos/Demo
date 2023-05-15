@@ -42,6 +42,7 @@ namespace Demo2.Windows
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet, "Активности");
             DatagridActivities.ItemsSource = dataSet.Tables["Активности"].DefaultView;
+            
             sqlConnection.Close();
         }
 
@@ -50,20 +51,26 @@ namespace Demo2.Windows
 
         }
 
-        private void FilterbyEvent(object sender, SelectionChangedEventArgs e)
+        private void FilterbyEvent(object sender, EventArgs e)
         {
-            sqlconnection.Open();
-            SqlCommand cmd2 = new SqlCommand("Select id from Мероприятия Where Название = '" + comboboxway.Text + "'", sqlconnection);
+            sqlconnection.Open(); ;
+            SqlCommand cmd2 = new SqlCommand("Select id from Мероприятия Where Название = '" + comboboxevent.Text + "'", sqlconnection);
             SqlDataReader sqlDataReader = cmd2.ExecuteReader();
             sqlDataReader.Read();
             SqlCommand cmd = new SqlCommand
            ("SELECT Название, Дата, Время_начала FROM Активности WHERE ID_мероприятия = " + sqlDataReader[0], sqlconnection);
+            sqlDataReader.Close();
 
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
             DataSet dataSet = new DataSet();
             dataAdapter.Fill(dataSet, "Активности");
             DatagridActivities.ItemsSource = dataSet.Tables["Активности"].DefaultView;
             sqlconnection.Close();
+        }
+
+        private void ClickRequest(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
