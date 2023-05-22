@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\Новая папка (3)\Demo2\obj\Debug\
+G:\ВКИ учеба программирование\demo git\Demo2\obj\Debug\
 Demo2
 none
 false
 DEBUG;TRACE
-G:\Новая папка (3)\Demo2\App.xaml
-7-1083029792
+G:\ВКИ учеба программирование\demo git\Demo2\App.xaml
+101348426524
+2-1161474625
+32-370575558
+1441180812364
+MainWindow.xaml;Windows\Events.xaml;Windows\Jury.xaml;Windows\Login.xaml;Windows\Moderator.xaml;Windows\MyActivities.xaml;Windows\AddEvent.xaml;Windows\MyProfile.xaml;Windows\Organizer.xaml;Windows\Registration.xaml;
 
-11504232770
-121344878204
-MainWindow.xaml;Windows\Jury.xaml;Windows\Login.xaml;Windows\Moderator.xaml;Windows\MyActivities.xaml;Windows\Organizator.xaml;Windows\Registration.xaml;
-
-False
+True
 

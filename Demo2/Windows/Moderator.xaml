@@ -40,8 +40,12 @@
             
             <Button Grid.Row="7" Grid.Column="4" Content="Подать заявку" Height="40" Width="100" Foreground="#7d6b5a" Click="ClickRequest" />
 
-            <DataGrid Name="DatagridActivities" ColumnHeaderStyle="{StaticResource CenteredHeaderStyle}" Grid.Row="3" Grid.ColumnSpan="4" Grid.RowSpan="4" Margin="25 0 25 0">
-
+            <DataGrid Name="DatagridActivities" AutoGenerateColumns="False" ColumnHeaderStyle="{StaticResource CenteredHeaderStyle}" Grid.Row="3" Grid.ColumnSpan="4" Grid.RowSpan="4" Margin="25 0 25 0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Активность}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="День" Binding="{Binding Время_начала}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Время" Binding="{Binding День}" Width="*"></DataGridTextColumn>
+                </DataGrid.Columns>
             </DataGrid>
             <ComboBox x:Name="comboboxevent" Grid.Row="2" VerticalAlignment="Center" Grid.Column="1" Height="30" Grid.ColumnSpan="2" Width="300" DropDownClosed="FilterbyEvent">
                 <ComboBoxItem>Первая встреча клуба «Leader stories»</ComboBoxItem>

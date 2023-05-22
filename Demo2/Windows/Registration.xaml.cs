@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,18 +15,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MaterialDesignThemes.Wpf;
 
 namespace Demo2.Windows
 {
+    public class NotEmptyValidationRule : ValidationRule
+    {
+        public override ValidationResult Validate(object value, CultureInfo cultureInfo)
+        {
+            return string.IsNullOrWhiteSpace((value ?? "").ToString())
+                ? new ValidationResult(false, "Поле обязательно") : ValidationResult.ValidResult;
+        }
+    }
     /// <summary>
     /// Логика взаимодействия для Registration.xaml
     /// </summary>
     public partial class Registration : Window
     {
+        private Модераторы _current = new Модераторы();
         public Registration()
         {
             InitializeComponent();
-            comboboxway.IsEnabled = false;
+            DataContext = _current;
+            comboboxcountry.ItemsSource = DEMO4Entities.GetContext().Страны.OrderBy(s => s.Название_страны).Select(s => s.Название_страны).ToList();
+            comboboxactivity.ItemsSource = DEMO4Entities.GetContext().Активности.OrderBy(s => s.Активность).Select(s => s.Активность).ToList();
         }
 
         private void Main(object sender, RoutedEventArgs e)
@@ -37,55 +50,52 @@ namespace Demo2.Windows
 
         private void Registrate(object sender, RoutedEventArgs e)
         {
-            string connString = @ConfigurationManager.AppSettings.Get("connString"); ;
-            SqlConnection sqlConnection = new SqlConnection(connString);
-            sqlConnection.Open();
+            StringBuilder errors = new StringBuilder();
 
-            string command;
-
-            if (comboboxrole.SelectedIndex == 1)
+            if(_current.id == 0)
             {
-                command = "insert into Жюри values (@id, @FIO, @sex , @email, @data, @country, @phone, @direction, @pass, 12)";
-
-            }else
-            {
-                //command = "insert into Модераторы values (@id, @FIO, @sex , @email, @birth, @country, @phone, @way, @pass, @event)";
-                command = "insert into Модераторы values ( @FIO, @sex , @email, @birth, @country, @phone, @way, @event, @pass, @id)";
+                var activity = DEMO4Entities.GetContext().Активности.FirstOrDefault(act => act.Активность == comboboxactivity.Text);
+                if(activity.id_Модератора != null)
+                {
+                    MessageBox.Show("Активность уже модерируется!");
+                    return;
+                }
+                activity.id_Модератора = _current.id;
+                _current.страна = DEMO4Entities.GetContext().Страны.FirstOrDefault(s => s.Название_страны == comboboxcountry.Text).Код2;
+                DEMO4Entities.GetContext().Модераторы.Add(_current);
             }
 
-            string hashpass = CaptchaModel.Captcha.GetHashString(textboxpass.Text);
-            SqlCommand cmd = new SqlCommand(command, sqlConnection);
-            cmd.Parameters.Add("@id", SqlDbType.Int).Value = textboxnumber.Text;
-            cmd.Parameters.Add("@FIO", SqlDbType.VarChar, 255).Value = textboxfio.Text;
-            cmd.Parameters.Add("@sex", SqlDbType.VarChar, 255).Value = comboboxsex.Text;
-            SqlCommand cmd2 = new SqlCommand(command, sqlConnection);
-            cmd2 = new SqlCommand("Select id from Мероприятия Where Название = '" + comboboxway.Text + "'", sqlConnection);
-            SqlDataReader sqlDataReader = cmd2.ExecuteReader();
-            if(sqlDataReader.Read()) cmd.Parameters.Add("@event", SqlDbType.Int).Value = sqlDataReader[0];
-            else cmd.Parameters.Add("@event", SqlDbType.Int).Value = "";
-            cmd.Parameters.Add("@way", SqlDbType.VarChar, 255).Value = textboxway.Text;   
-            cmd.Parameters.Add("@birth", SqlDbType.VarChar, 255).Value = textboxbirth.Text;
-            cmd.Parameters.Add("@country", SqlDbType.VarChar, 255).Value = textboxcountry.Text;
-            cmd.Parameters.Add("@email", SqlDbType.VarChar, 255).Value = textboxemail.Text;
-            cmd.Parameters.Add("@phone", SqlDbType.VarChar, 255).Value = textboxphone.Text;
-            sqlDataReader.Close();
-            cmd.Parameters.Add("@pass", SqlDbType.VarChar, 255).Value = hashpass;
-            cmd.ExecuteNonQuery();
-
-            //cmd = new SqlCommand("Update мероприятия set Модератор = " + textboxnumber + " Where Название = " + comboboxway.Text, sqlConnection);
-            //cmd.ExecuteNonQuery();
-            sqlConnection.Close();
-            //SqlCommand sqlCommand = new SqlCommand("INSERT INTO Жюри VALUES('" + textboxlogin.Text + "', '" + textboxsex.Text + "', '"
-            //            + textboxemail.Text + "', '" + textboxbirth.Text + "', " + textboxcountry.Text + ", '" +
-            //             textboxnumber.Text + "', '" + comboboxway.SelectedValue.ToString() + "', '" + hashpass + "' + '1')", sqlConnection);
+            try
+            {
+                DEMO4Entities.GetContext().SaveChanges();
+                MessageBox.Show("Информация сохранена!");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);    
+            }
         }
 
         private void isChecked(object sender, RoutedEventArgs e)
         {
-            if (Check.IsChecked == true) comboboxway.IsEnabled = true;
+            if (Check.IsChecked == true) comboboxactivity.IsEnabled = true;
             else {
-                comboboxway.IsEnabled = false;
-                comboboxway.Text = "";
+                comboboxactivity.IsEnabled = false;
+                comboboxactivity.Text = "";
+            }
+        }
+
+        private void ShowPasswordClick(object sender, RoutedEventArgs e)
+        {
+            if (PasswordBoxAssist.GetIsPasswordRevealed(textboxpass) == true)
+            {
+                PasswordBoxAssist.SetIsPasswordRevealed(textboxpass, false);
+                PasswordBoxAssist.SetIsPasswordRevealed(textboxpass2, false);
+            }
+            else
+            {
+                PasswordBoxAssist.SetIsPasswordRevealed(textboxpass2, true);
+                PasswordBoxAssist.SetIsPasswordRevealed(textboxpass, true);
             }
         }
     }

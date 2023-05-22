@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.Configuration;
 using System.Collections.Specialized;
 
+
 namespace Demo2.Windows
 {
     /// <summary>
@@ -38,26 +39,25 @@ namespace Demo2.Windows
 
         private void Enter(object sender, RoutedEventArgs e)
         {
-            string connString = @ConfigurationManager.AppSettings.Get("connString");
-            SqlConnection sqlConnection = new SqlConnection(connString);
-            sqlConnection.Open();
+            var moder = DEMO4Entities.GetContext().Модераторы.FirstOrDefault(m => m.телефон == textboxlogin.Text);
+            var moder2 = DEMO4Entities.GetContext().Модераторы.FirstOrDefault(m => m.пароль == textboxpass.Text);
 
-            string hashpass = CaptchaModel.Captcha.GetHashString(textboxpass.Text);
-            string command = "Select * from Модераторы Where телефон = @login AND пароль = @pass";
-            SqlCommand cmd = new SqlCommand(command, sqlConnection);
-            cmd.Parameters.Add("@login", SqlDbType.VarChar, 255).Value = textboxlogin.Text;
-            cmd.Parameters.Add("@pass", SqlDbType.VarChar, 255).Value = hashpass;
-            //SqlCommand sqlCommand = new SqlCommand("SELECT * from Жюри Where почта ='" + textboxlogin.Text + "' AND Пароль = '" + hashpass + "'", sqlConnection);
-            SqlDataReader sqlDataReader = cmd.ExecuteReader();
-
-            if (sqlDataReader.Read())
+            if (moder != null && moder2 != null)
             {
-                Moderator moderator = new Moderator((int)sqlDataReader["id"], (string)sqlDataReader["пол"], (string)sqlDataReader["ФИО"], sqlConnection, sqlDataReader);
+                Moderator moderator = new Moderator(moder as Demo2.Модераторы);
                 moderator.Show();
                 this.Close();
             }
-            sqlDataReader.Close();
-            sqlConnection.Close();
+
+            var org = DEMO4Entities.GetContext().Организаторы.FirstOrDefault(m => m.телефон == textboxlogin.Text);
+            var org2 = DEMO4Entities.GetContext().Организаторы.FirstOrDefault(m => m.пароль == textboxpass.Text);
+
+            if (org != null && org2 != null)
+            {
+                Organizer organizer = new Organizer();
+                organizer.Show();
+                this.Close();
+            }
         }
 
         private void EnterWithout(object sender, RoutedEventArgs e)

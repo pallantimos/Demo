@@ -27,9 +27,9 @@ namespace Demo2
         {
             InitializeComponent();
 
-            // Login registration = new Login();
-            // registration.Show();
-            // this.Close();
+             Login registration = new Login();
+             registration.Show();
+             this.Close();
             captcha = new Captcha();
             // генерируем и отображаем капчу
             captchaText = captcha.getImage();

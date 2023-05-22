@@ -1,0 +1,62 @@
+﻿<Window x:Class="Demo2.Windows.MyProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo2.Windows"
+        mc:Ignorable="d"
+          WindowStyle="None"
+        Background="Transparent"
+        Title="Moderator" Height="650" Width="800">
+    <Border Background="White" CornerRadius="30">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" VerticalAlignment="Center"  Text="Мой профиль" Grid.Column="1" Grid.ColumnSpan="2"
+                       Foreground="#7d6b5a" TextAlignment="Center" FontSize="26" FontFamily="Bahnschrift Light" />
+
+            <TextBlock Grid.Row="1" VerticalAlignment="Top"  Text="" Grid.Column="1" Grid.ColumnSpan="2" x:Name="time"
+                       Foreground="#7d6b5a" TextAlignment="Center" FontSize="20" FontFamily="Bahnschrift Light" />
+            <TextBlock Grid.Row="1" VerticalAlignment="Bottom"  Text="" Grid.Column="1" Grid.ColumnSpan="2" x:Name="name"
+                       Foreground="#7d6b5a" TextAlignment="Center" FontSize="20" FontFamily="Bahnschrift Light" />
+
+            <TextBlock Text="ФИО:" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Left" />
+            <TextBlock Text="" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Center" />
+            <TextBlock Text="Пол:" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Left" />
+            <TextBlock Text="" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Center" />
+            <TextBlock Text="Дата рождения:" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Left" />
+            <TextBlock Text="" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Center" />
+            <TextBlock Text="Дата рождения:" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Left" />
+            <TextBlock Text="" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Center" />
+            <TextBlock Text="ID Number:" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Left" />
+            <TextBlock Text="" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Center" />
+            <TextBlock Text="Страна:" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Left" />
+            <TextBlock Text="" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Center" />
+            <TextBlock Text="Телефон:" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Left" />
+            <TextBlock Text="" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Center" />
+            <TextBlock Text="Email:" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Left" />
+            <TextBlock Text="" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Center" />
+            <TextBlock Text="Пароль:" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Right" />
+            <TextBox x:Name="textboxpass" Width="200px" Height="40px" Grid.Row="6" Grid.Column="3" HorizontalAlignment="Left" />
+            <TextBox x:Name="textboxpass2" Width="200px" Height="40px" Grid.Row="7" Grid.Column="3" HorizontalAlignment="Left" />
+            <TextBlock Text="Повтор пароля:" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2"  Width="auto" Height="20px" HorizontalAlignment="Right" />
+        </Grid>
+    </Border>
+</Window>

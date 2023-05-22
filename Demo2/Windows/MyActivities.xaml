@@ -39,9 +39,9 @@
             <TextBlock Grid.Row="2" VerticalAlignment="Top"  Text="Направление"
                        Foreground="#7d6b5a" TextAlignment="Center" FontSize="22" FontFamily="Bahnschrift Light" />
 
-            <Button Grid.Row="1" Grid.Column="4" Content="Мои активности" Height="40" Width="100" Foreground="#7d6b5a" />
+            <Button Grid.Row="1" Grid.Column="4" Content="Мои активности" Height="40" Width="100"  />
 
-            <Button Grid.Row="8" Grid.Column="4" Content="Подать заявку" Height="40" Width="100" Foreground="#7d6b5a" />
+            <Button Grid.Row="8" Grid.Column="4" Content="Подать заявку" Height="40" Width="100"  />
 
             <DataGrid Name="DatagridActivities" ColumnHeaderStyle="{StaticResource CenteredHeaderStyle}" Grid.Row="3" Grid.ColumnSpan="4" Grid.RowSpan="4">
 
