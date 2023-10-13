@@ -7,7 +7,7 @@
 
 Я начинающий бэкенд разработчик<img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30px">. Мой путь в it начался в 2020-ом году, с курсов Academ IT School, где я прошел курс "основы программирования на Java". После Academ IT School, я продолжил изучать Java на JavaRush до 2021 года. В 2021 году поступил в Высший колледж информатики Новосибирского Государственного Университета. В ВКИ я изучил основы Python написал пару простых игр на pygame, написал несколько простых игр на движке Unity, изучил основы C++, попробовал верстать сайты используя  JavaScript, HTML и CSS. Но свое призвание я нашел в разработке серверной части сайтов(бэкенд). Вследствии чего, в настоящий момент пишу диплом на тему - "Разработка серверной части WEB-приложения туристической базы "Кочевник"". 
 
-- :mailbox: Как связаться со мной: [![Telegram Badge](https://img.shields.io/badge/-filimonovalexey-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/blackberrykris) [![Gmail Badge](https://img.shields.io/badge/-Gmail-red?style=flat&logo=Gmail&logoColor=white)](mailto:dondokovabnsu@gmail.com)
+- :mailbox: Как связаться со мной: [![Telegram Badge](https://img.shields.io/badge/-dondokovaldar-blue?style=flat&logo=Telegram&logoColor=white)](https://t.me/blackberrykris) [![Gmail Badge](https://img.shields.io/badge/-Gmail-red?style=flat&logo=Gmail&logoColor=white)](mailto:dondokovabnsu@gmail.com)
 
 ---
 
